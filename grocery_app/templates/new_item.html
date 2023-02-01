@@ -4,14 +4,45 @@
 <h1>New Item</h1>
 
 <form method="POST">
+    {{ form.csrf_token }}
     <fieldset>
         <legend>Please enter your information:</legend>
+        <ul>
+            {% for error in form.name.errors %}
+            <li class="error">{{ error }}</li>
+            {% endfor %}
+            {% for error in form.price.errors %}
+            <li class="error">{{ error }}</li>
+            {% endfor %}
+            {% for error in form.category.errors %}
+            <li class="error">{{ error }}</li>
+            {% endfor %}
+            {% for error in form.photo_url.errors %}
+            <li class="error">{{ error }}</li>
+            {% endfor %}
+            {% for error in form.store.errors %}
+            <li class="error">{{ error }}</li>
+            {% endfor %}
+        </ul>
+        
+        {{ form.name.label }}
+        {{ form.name }}
 
+        {{ form.price.label }}
+        {{ form.price }}
 
+        {{ form.category.label }}
+        {{ form.category }}
+
+        {{ form.photo_url.label }}
+        {{ form.photo_url }}
+
+        {{ form.store.label }}
+        {{ form.store }}
 
         <!-- TODO: Remove the next paragraph and use the `form` object passed in 
             from the route to render a form. -->
-        <p><em>Form fields go here!</em></p>
+        
 
         <input type="submit" value="Submit">
     </fieldset>

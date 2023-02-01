@@ -55,7 +55,7 @@ def new_item():
             price=form.price.data,
             category=form.category.data,
             photo_url=form.photo_url.data,
-            store_id=form.store_id.data,
+            store=form.store.data,
         )
         db.session.add(new_item)
         db.session.commit()
@@ -105,7 +105,7 @@ def item_detail(item_id):
         item.price=form.price.data,
         item.category=form.category.data,
         item.photo_url=form.photo_url.data,
-        item.store_id=form.store_id.data
+        item.store=form.store.data
 
         db.session.add(item)
         db.session.commit()
