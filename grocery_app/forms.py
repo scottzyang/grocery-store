@@ -11,7 +11,7 @@ class GroceryStoreForm(FlaskForm):
     # - title - StringField
     # - address - StringField
     # - submit button
-    title = StringField('Store name', 
+    title = StringField('Store Name', 
         validators=[
             DataRequired(),
             Length(min=3, max=80, message="Your store must be between 3 and 80 characters.")
