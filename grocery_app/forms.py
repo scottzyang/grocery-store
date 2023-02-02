@@ -7,10 +7,6 @@ from grocery_app.models import *
 class GroceryStoreForm(FlaskForm):
     """Form for adding/updating a GroceryStore."""
 
-    # TODO: Add the following fields to the form class:
-    # - title - StringField
-    # - address - StringField
-    # - submit button
     title = StringField('Store Name', 
         validators=[
             DataRequired(),
@@ -26,13 +22,6 @@ class GroceryStoreForm(FlaskForm):
 class GroceryItemForm(FlaskForm):
     """Form for adding/updating a GroceryItem."""
 
-    # TODO: Add the following fields to the form class:
-    # - name - StringField
-    # - price - FloatField
-    # - category - SelectField (specify the 'choices' param)
-    # - photo_url - StringField
-    # - store - QuerySelectField (specify the `query_factory` param)
-    # - submit button
     name = StringField('Item name', validators=[
         DataRequired(),
         Length(min=3, max=80, message="Item must be between 3 and 80 characters.")
